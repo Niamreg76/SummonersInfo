@@ -1,0 +1,122 @@
+.mini_image{
+    width: 10%;
+}
+.match_history{
+    background-color: rgb(49,49,60);
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgb(28, 28, 31);
+    backdrop-filter: blur( 9.5px );
+    -webkit-backdrop-filter: blur( 9.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.ligne{
+    display: flex;
+    flex-direction: row;
+}
+
+.statistiques{
+    display: flex;
+    justify-content: space-between;
+}
+.statistiques p{
+    margin-left: 10px;
+}
+.important_text {
+    font-size: 1.7rem;
+    font-style: bold;
+}
+.important_text2 {
+    font-size: 1.3rem;
+    font-style: bold;
+}
+.sous_Stat{
+    display: flex;
+    flex-direction: column;
+    line-height: 5px;
+}
+.square_img{
+    width: 48.5px;
+    height: 48.5px;
+
+}
+.vertical{
+    display: flex;
+    flex-direction: column;
+}
+.little_square{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border: 1px solid white;
+}
+.little_img{
+    width: 40px;
+    height: 40px;
+}
+.itemlist{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    margin-right: 80px;
+}
+
+@media (max-width: 1098px){
+    .match_history{
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
+}
+
+@media (max-width: 650px){
+    .match_history{
+        margin-right: 0px!important;        
+    }
+    .textostat{
+        white-space: nowrap;
+    }
+    .mini_image{
+        width: 10%;
+        height: 10%;
+    }
+    .square_img{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 530px){
+    .match_history{
+        margin-right: 0px!important;        
+    }
+    .sous_Stat{
+        visibility: hidden;
+        display: none;
+    }
+    .mini_image{
+        width: 20%;
+    }
+
+}
+@media (max-width: 420px){
+    .mini_image{
+        height: 30%;
+    }
+    .square_img{
+        width: 38px;
+        height: 38px;
+    }
+    .textostat{
+        margin-right: 0px;
+        white-space: nowrap;
+    }
+}
+
+.victoire{
+    background-color: green;
+    padding-left: 8px;
+}
+.defaite{
+    background-color: rgb(89,52,59);
+    padding-left: 8px;
+}

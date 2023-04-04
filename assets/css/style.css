@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mini_image{
+    width: 5%;
+}
+
+.box {
+    border: 1px solid white;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    width: 128px;
+    height: 128px;
+    position: inherit;
+}
+.nickname p {
+    position: relative;
+    bottom: 10px;
+    padding: 0;
+    margin: 0;
+}
+.nickname p span {
+    border: 1px solid white;
+    z-index: 999;
+    border-radius: 50%;
+    background-color: white;
+}
+.nickname img {
+    border: 1px solid white;
+}
+.pink
+{
+    color: #f1105b;
+}
+.banner {
+    min-height: calc(100vh - 56px);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner h1 {
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.copyrightText {
+    padding: 8px 40px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: rgba(4,5,6,255);
+}
+.copyrightText p {
+    color: white;
+}
+.copyrightText a {
+    color: #f1105b;
+    font-weight: 500;
+    text-decoration: none;
+}
+.form{
+    margin-top: 30px;
+}
+.nickname .summonerName {
+    font-size: 30px;
+}
+div .most {
+    margin-top: 13px;
+}
+@media (max-width: 767px){
+    header nav a {
+        display: none!important;
+    }
+    header nav form input {
+        width: 190px!important;
+        margin-right: 8px;
+    }
+    .banner  h1 {
+        display: none;
+    }
+}
