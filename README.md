@@ -1,6 +1,8 @@
 # SummonersInfo
 League of Legends API in PHP
 
+Unzip the node file module
+
 Code preview : 
 https://summonersinfo.alwaysdata.net/
 
