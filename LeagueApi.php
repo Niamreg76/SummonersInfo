@@ -3,37 +3,37 @@
 
 class SummonerApi {
 
-    // url de base de l'api
+    // API URL
     private $baseUrl = 'https://euw1.api.riotgames.com/lol/';
-    // clé d'api
+    // API KEY
     private $apiKey = 'YOUR API KEY';
     
 
     public function getSummonerByName($summonerName) { // SUMMONER-V4 api
 
-        // remplace les espaces par des %20
+        // replace spaces in the summoner name by %20
         $summonerName = str_replace(' ', '%20', $summonerName);
-        // url de l'api
+        // API URL
         $url = $this->baseUrl.'summoner/v4/summoners/by-name/'.$summonerName.'?api_key='.$this->apiKey;
 
-        // initialisation de curl
+        // init Curl
         $ch = curl_init($url);
-        // retourne le résultat de la requête
+        // return curl request
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // ne vérifie pas le certificat ssl
+        // don't verify the SSL certificate
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        // exécute la requête
+        // execute the request
         $response = curl_exec($ch);
-        // ferme la connexion
+        // close the connection
         curl_close($ch);
-        // décode le json
+        // decode the JSON
         $data = json_decode($response, true);
-        // retourne le résultat
+        // return the result
         return $data;
 
     }
 
-    public function getLeagueById($summonerId){ // LEAGUE-V4 apí | retourne les infos de la ligue du joueur
+    public function getLeagueById($summonerId){ // LEAGUE-V4 apí | return player informations
 
         $url = $this->baseUrl.'league/v4/entries/by-summoner/'.$summonerId.'?api_key='.$this->apiKey;
 
@@ -48,7 +48,7 @@ class SummonerApi {
 
     }
 
-    public function getMasteryById($summonerId) { // CHAMPION-MASTERY-V4 api | retourne les infos sur la maitrise du joueur
+    public function getMasteryById($summonerId) { // CHAMPION-MASTERY-V4 api | return mastery informations
         
         $url = $this->baseUrl.'champion-mastery/v4/champion-masteries/by-summoner/'.$summonerId.'?api_key='.$this->apiKey;
 
@@ -63,7 +63,7 @@ class SummonerApi {
 
     }
 
-    public function getChampion(){ // retourne les infos sur les champions
+    public function getChampion(){ // return champions informations
 
         $url = 'http://ddragon.leagueoflegends.com/cdn/13.6.1/data/en_US/champion.json';
         $ch = curl_init($url);
@@ -77,7 +77,7 @@ class SummonerApi {
 
     }
 
-    public function getMatchHistoryById($puuid){ // retourne les 20 dernières parties du joueur
+    public function getMatchHistoryById($puuid){ // return the last 20 matchs
 
         $url = 'https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/'.$puuid.'/ids?start=0&count=20&api_key='.$this->apiKey;
         $ch = curl_init($url);
@@ -91,7 +91,7 @@ class SummonerApi {
   
     }
 
-    public function getMatchByMatchId($matchId){ // retourne les infos sur une partie
+    public function getMatchByMatchId($matchId){ // return the informations of a match
 
         $url = 'https://europe.api.riotgames.com/lol/match/v5/matches/'.$matchId.'?api_key='.$this->apiKey;
         $ch = curl_init($url);
@@ -104,7 +104,7 @@ class SummonerApi {
         return $data;
     }
 
-    public function getSummonerSpells(){ // retourne les infos sur les sorts d'invocateurs
+    public function getSummonerSpells(){ // return information on the sumonner spells
 
         $url = 'https://ddragon.leagueoflegends.com/cdn/13.6.1/data/en_US/summoner.json';
         $ch = curl_init($url);
@@ -118,7 +118,7 @@ class SummonerApi {
 
     }
 
-    public function getItems(){ // retourne les infos sur les items
+    public function getItems(){ // return informations on the items
             
             $url = 'https://ddragon.leagueoflegends.com/cdn/13.6.1/data/en_US/item.json';
             $ch = curl_init($url);
